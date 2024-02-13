@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Human Profit</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: cornflowerblue;
+}
+
+.background{
+  background-color: rgb(231, 231, 231);
+  padding: 48px 24px;
+  border-radius: 5%;
+}
+
+body h1{
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: rgb(113, 113, 113);
+}
+
+body h2{
+  font-size: 14pt;
+  font-weight: bold;
+  color: rgb(45, 45, 45);
+}
+
+section{
+  display: flex;
+  gap: 8px;
+  position: relative;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  width: 48px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+<body>
+  <div class="background">
+    <form action="POST">
+      <h1>#Ariel Inspector v1.1</h1>
+      <div class="skills">
+      <h2>Ariel é bom em:</h2>
+      <section>
+      <span>Valorant</span>
+      <label class="switch">
+      <input type="checkbox" id="valorant">
+      <span class="slider round"></span>
+</label></section>
+
+      <section><span>CSS</span>
+      <label class="switch">
+  <input type="checkbox" id="css">
+  <span class="slider round"></span>
+</label></section>
+
+      <section><span>Garotas</span>
+      <label class="switch">
+  <input type="checkbox" id="garotas">
+  <span class="slider round"></span>
+</label></section>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+    const valorant = document.getElementById("valorant"),
+      css = document.getElementById("css"),
+      garotas = document.getElementById("garotas");
+
+valorant.addEventListener("click", () => {Check1()})
+css.addEventListener("click", () => {Check2()})
+garotas.addEventListener("click", () => {Check3()})
+
+function Check1(){
+  valorant.checked===true ? css.checked=false : console.log('valorant');
+}
+
+function Check2(){
+  css.checked===true ? garotas.checked=false : console.log('css');
+}
+
+function Check3(){
+  garotas.checked===true ? valorant.checked=false : console.log('garotas');
+}
+</script>
+</html>
